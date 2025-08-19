@@ -1,0 +1,6 @@
+{
+  "name": "CPED-Chat Prompt Engineering Dashboard",
+  "description": "An interactive dashboard to generate, refine, and manage AI prompts across various categories using a chat-based interface powered by Gemini.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
