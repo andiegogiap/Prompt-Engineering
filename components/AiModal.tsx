@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { PromptCategory, ChatMessage, InferenceData } from '../types';
 import { geminiService } from '../services/geminiService';
@@ -206,13 +205,13 @@ export const AiModal: React.FC<AiModalProps> = ({ prompt, onClose, systemInstruc
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={onClose}>
-      <div className="relative flex flex-col w-full max-w-4xl max-h-[90vh] bg-background/80 backdrop-blur-lg text-card-foreground rounded-lg shadow-2xl mx-4 border border-neon-purple/50 shadow-neon-purple/20" onClick={(e) => e.stopPropagation()}>
-        <header className="flex items-center justify-between p-4 border-b border-neon-purple/30">
+      <div className="relative flex flex-col w-full max-w-4xl max-h-[90vh] text-card-foreground mx-4 glass neon" onClick={(e) => e.stopPropagation()}>
+        <header className="flex items-center justify-between p-4 border-b border-white/10">
           <h2 className="text-xl font-bold font-display">Prompt Builder for "{prompt.subject}"</h2>
-          <button onClick={onClose} className="p-1 rounded-full text-2xl leading-none hover:bg-accent">&times;</button>
+          <button onClick={onClose} className="p-1 rounded-full text-2xl leading-none hover:bg-white/10">&times;</button>
         </header>
 
-        <div className="flex border-b border-neon-purple/30 px-4" role="tablist">
+        <div className="flex border-b border-white/10 px-4" role="tablist">
           <TabButton name="Chat" activeTab={activeTab} onClick={() => setActiveTab('chat')} />
           <TabButton name="Infographic" activeTab={activeTab} onClick={() => setActiveTab('infographic')} disabled={!infographicSvg} />
           <TabButton name="Inference" activeTab={activeTab} onClick={() => setActiveTab('inference')} disabled={!inferenceData} />
@@ -307,7 +306,7 @@ export const AiModal: React.FC<AiModalProps> = ({ prompt, onClose, systemInstruc
              )}
         </div>
         
-        <footer className="p-4 border-t border-neon-purple/30">
+        <footer className="p-4 border-t border-white/10">
           <div className="flex gap-2">
             <input
               type="text"

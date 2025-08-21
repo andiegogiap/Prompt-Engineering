@@ -96,6 +96,13 @@
         --border: 220 26% 25%;
         --input: 220 26% 25%;
         --ring: var(--neon-pink);
+
+        /* Glassmorphism variables */
+        --glass-bg-rgb: 18,18,21;
+        --glass-alpha: .28;
+        --glass-blur: 18px;
+        --neon-a: 255,0,200;
+        --neon-b: 0,229,255;
       }
 
       body {
@@ -130,6 +137,24 @@
       ::-webkit-scrollbar-thumb:hover {
         background: hsl(var(--neon-blue));
         box-shadow: 0 0 5px hsl(var(--neon-blue)), 0 0 10px hsl(var(--neon-blue));
+      }
+      
+      /* Glassmorphism Styles */
+      .glass{ 
+        background: rgba(var(--glass-bg-rgb), var(--glass-alpha));
+        backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(120%);
+        border: 1px solid rgba(255,255,255,.15);
+        box-shadow: 0 8px 30px rgba(0,0,0,.35);
+        border-radius: 16px;
+      }
+      .neon{ position: relative; }
+      .neon::before{
+        content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+        background: linear-gradient(120deg, rgb(var(--neon-b)) 0%, rgb(var(--neon-a)) 50%, rgb(var(--neon-b)) 100%);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor; mask-composite: exclude; /* punch the middle out */
+        pointer-events: none; filter: drop-shadow(0 0 8px rgba(var(--neon-a),.35));
       }
     </style>
   <script type="importmap">

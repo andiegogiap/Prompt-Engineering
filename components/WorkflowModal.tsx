@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { workflowData } from '../constants';
 import { WorkflowStep } from '../types';
@@ -35,8 +34,8 @@ const AgentCard: React.FC<{ step: WorkflowStep }> = ({ step }) => (
 export const WorkflowModal: React.FC<WorkflowModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={onClose}>
-      <div className="relative flex flex-col w-full max-w-6xl max-h-[90vh] bg-background/80 backdrop-blur-lg text-card-foreground rounded-lg shadow-2xl mx-4 border border-neon-blue/50 shadow-neon-blue/20" onClick={(e) => e.stopPropagation()}>
-        <header className="flex items-center justify-between p-4 border-b border-neon-blue/30">
+      <div className="relative flex flex-col w-full max-w-6xl max-h-[90vh] text-card-foreground mx-4 glass neon" onClick={(e) => e.stopPropagation()}>
+        <header className="flex items-center justify-between p-4 border-b border-white/10">
             <div className="flex items-center gap-4">
                  <h2 className="text-2xl font-bold font-display">{workflowData.name}</h2>
                  {workflowData.tracking && (
@@ -46,7 +45,7 @@ export const WorkflowModal: React.FC<WorkflowModalProps> = ({ onClose }) => {
                      </span>
                  )}
             </div>
-          <button onClick={onClose} className="text-2xl p-1 rounded-full hover:bg-accent leading-none">&times;</button>
+          <button onClick={onClose} className="text-2xl p-1 rounded-full hover:bg-white/10 leading-none">&times;</button>
         </header>
 
         <div className="flex-1 p-6 overflow-auto space-y-6">
